@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -16,7 +16,7 @@ namespace Octokit
             Number = number;
         }
 
-        public PullRequest(long id, string nodeId, string url, string htmlUrl, string diffUrl, string patchUrl, string issueUrl, string statusesUrl, int number, ItemState state, string title, string body, DateTimeOffset createdAt, DateTimeOffset updatedAt, DateTimeOffset? closedAt, DateTimeOffset? mergedAt, GitReference head, GitReference @base, User user, User assignee, IReadOnlyList<User> assignees, bool? mergeable, MergeableState? mergeableState, User mergedBy, string mergeCommitSha, int comments, int commits, int additions, int deletions, int changedFiles, Milestone milestone, bool locked, bool? maintainerCanModify, IReadOnlyList<User> requestedReviewers, IReadOnlyList<Label> labels)
+        public PullRequest(long id, string nodeId, string url, string htmlUrl, string diffUrl, string patchUrl, string issueUrl, string statusesUrl, int number, ItemState state, string title, string body, DateTimeOffset createdAt, DateTimeOffset updatedAt, DateTimeOffset? closedAt, DateTimeOffset? mergedAt, GitReference head, GitReference @base, User user, User assignee, IReadOnlyList<User> assignees, bool? mergeable, MergeableState? mergeableState, User mergedBy, string mergeCommitSha, int comments, int commits, int additions, int deletions, int changedFiles, Milestone milestone, bool locked, bool? maintainerCanModify, IReadOnlyList<User> requestedReviewers, IReadOnlyList<Label> labels, bool draft)
         {
             Id = id;
             NodeId = nodeId;
@@ -53,6 +53,7 @@ namespace Octokit
             MaintainerCanModify = maintainerCanModify;
             RequestedReviewers = requestedReviewers;
             Labels = labels;
+            Draft = draft;
         }
 
         /// <summary>
@@ -238,6 +239,8 @@ namespace Octokit
         public IReadOnlyList<User> RequestedReviewers { get; protected set; }
 
         public IReadOnlyList<Label> Labels { get; protected set; }
+
+        public bool Draft { get; set; }
 
         internal string DebuggerDisplay
         {
