@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
@@ -43,7 +43,7 @@ namespace Octokit
         /// </remarks>
         [Preview("shadow-cat")]
         [ManualRoute("GET", "/repos/{owner}/{repo}/pulls/{pull_number}")]
-        public Task<PullRequest> Get(string owner, string name, int number)
+        public Task<PullRequest> Get(string owner, string name, long number)
         {
             Ensure.ArgumentNotNullOrEmptyString(owner, nameof(owner));
             Ensure.ArgumentNotNullOrEmptyString(name, nameof(name));
@@ -59,7 +59,7 @@ namespace Octokit
         /// </remarks>
         [Preview("shadow-cat")]
         [ManualRoute("GET", "/repositories/{id}/pulls/{number}")]
-        public Task<PullRequest> Get(long repositoryId, int number)
+        public Task<PullRequest> Get(long repositoryId, long number)
         {
             return ApiConnection.Get<PullRequest>(ApiUrls.PullRequest(repositoryId, number), null, AcceptHeaders.DraftPullRequestApiPreview);
         }

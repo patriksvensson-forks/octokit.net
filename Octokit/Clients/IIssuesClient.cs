@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
@@ -52,7 +52,7 @@ namespace Octokit
         /// <param name="number">The issue number</param>
         [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", MessageId = "Get",
              Justification = "Method makes a network request")]
-        Task<Issue> Get(string owner, string name, int number);
+        Task<Issue> Get(string owner, string name, long number);
 
         /// <summary>
         /// Gets a single Issue by number.
@@ -64,7 +64,7 @@ namespace Octokit
         /// <param name="number">The issue number</param>
         [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", MessageId = "Get",
              Justification = "Method makes a network request")]
-        Task<Issue> Get(long repositoryId, int number);
+        Task<Issue> Get(long repositoryId, long number);
 
         /// <summary>
         /// Gets all open issues assigned to the authenticated user across all the authenticated user’s visible

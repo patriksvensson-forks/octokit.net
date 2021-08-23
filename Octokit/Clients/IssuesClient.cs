@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Octokit
@@ -68,7 +68,7 @@ namespace Octokit
         /// <param name="number">The issue number</param>
         [Preview("squirrel-girl")]
         [ManualRoute("GET", "/repos/{owner}/{repo}/issues/{issue_number}")]
-        public Task<Issue> Get(string owner, string name, int number)
+        public Task<Issue> Get(string owner, string name, long number)
         {
             Ensure.ArgumentNotNullOrEmptyString(owner, nameof(owner));
             Ensure.ArgumentNotNullOrEmptyString(name, nameof(name));
@@ -86,7 +86,7 @@ namespace Octokit
         /// <param name="number">The issue number</param>
         [Preview("squirrel-girl")]
         [ManualRoute("GET", "/repositories/{id}/issues/{number}")]
-        public Task<Issue> Get(long repositoryId, int number)
+        public Task<Issue> Get(long repositoryId, long number)
         {
             return ApiConnection.Get<Issue>(ApiUrls.Issue(repositoryId, number), null, AcceptHeaders.ReactionsPreview);
         }

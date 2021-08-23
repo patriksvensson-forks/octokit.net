@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
@@ -67,7 +67,7 @@ namespace Octokit
         /// <param name="name">The repository's name</param>
         /// <param name="id">The id of the release</param>
         /// <exception cref="ApiException">Thrown when a general API error occurs.</exception>
-        Task<Release> Get(string owner, string name, int id);
+        Task<Release> Get(string owner, string name, long id);
 
         /// <summary>
         /// Gets a single <see cref="Release"/> for the specified repository.

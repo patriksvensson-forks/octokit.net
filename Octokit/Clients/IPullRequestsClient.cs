@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
@@ -36,7 +36,7 @@ namespace Octokit
         /// </remarks>
         [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", MessageId = "Get",
              Justification = "Method makes a network request")]
-        Task<PullRequest> Get(string owner, string name, int number);
+        Task<PullRequest> Get(string owner, string name, long number);
 
         /// <summary>
         /// Get a pull request by number.
@@ -46,7 +46,7 @@ namespace Octokit
         /// </remarks>
         [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", MessageId = "Get",
              Justification = "Method makes a network request")]
-        Task<PullRequest> Get(long repositoryId, int number);
+        Task<PullRequest> Get(long repositoryId, long number);
 
         /// <summary>
         /// Get all open pull requests for the repository.

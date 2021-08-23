@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Octokit
@@ -279,7 +279,7 @@ namespace Octokit
         /// <param name="id">The Id of the notification to retrieve.</param>
         /// <remarks>http://developer.github.com/v3/activity/notifications/#view-a-single-thread</remarks>
         [ManualRoute("GET", "/notifications/threads/{thread_id}")]
-        public Task<Notification> Get(int id)
+        public Task<Notification> Get(long id)
         {
             return ApiConnection.Get<Notification>(ApiUrls.Notification(id));
         }
@@ -290,7 +290,7 @@ namespace Octokit
         /// <param name="id">The id of the notification.</param>
         /// <remarks>http://developer.github.com/v3/activity/notifications/#mark-a-thread-as-read</remarks>
         [ManualRoute("PATCH", "/notifications/threads/{thread_id}")]
-        public Task MarkAsRead(int id)
+        public Task MarkAsRead(long id)
         {
             return ApiConnection.Patch(ApiUrls.Notification(id));
         }

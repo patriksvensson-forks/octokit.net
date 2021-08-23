@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Octokit
@@ -189,7 +189,7 @@ namespace Octokit
         /// <param name="name">The name of the repository</param>
         /// <param name="id">The id of the release</param>
         /// <returns></returns>
-        public static Uri Releases(string owner, string name, int id)
+        public static Uri Releases(string owner, string name, long id)
         {
             return "repos/{0}/{1}/releases/{2}".FormatUri(owner, name, id);
         }
@@ -267,7 +267,7 @@ namespace Octokit
         /// </summary>
         /// <param name="id">The Id of the notification.</param>
         /// <returns></returns>
-        public static Uri Notification(int id)
+        public static Uri Notification(long id)
         {
             return "notifications/threads/{0}".FormatUri(id);
         }
@@ -430,7 +430,7 @@ namespace Octokit
         /// <param name="name">The name of the repository</param>
         /// <param name="number">The issue number</param>
         /// <returns></returns>
-        public static Uri Issue(string owner, string name, int number)
+        public static Uri Issue(string owner, string name, long number)
         {
             return "repos/{0}/{1}/issues/{2}".FormatUri(owner, name, number);
         }
@@ -1256,7 +1256,7 @@ namespace Octokit
         /// <param name="name">The name of the repository</param>
         /// <param name="number">The pull request number</param>
         /// <returns></returns>
-        public static Uri PullRequest(string owner, string name, int number)
+        public static Uri PullRequest(string owner, string name, long number)
         {
             return "repos/{0}/{1}/pulls/{2}".FormatUri(owner, name, number);
         }
@@ -2937,7 +2937,7 @@ namespace Octokit
         /// <param name="repositoryId">The Id of the repository</param>
         /// <param name="number">The issue number</param>
         /// <returns>The <see cref="Uri"/> for the specified issue.</returns>
-        public static Uri Issue(long repositoryId, int number)
+        public static Uri Issue(long repositoryId, long number)
         {
             return "repositories/{0}/issues/{1}".FormatUri(repositoryId, number);
         }
@@ -3140,7 +3140,7 @@ namespace Octokit
         /// <param name="repositoryId">The Id of the repository</param>
         /// <param name="number">The pull request number</param>
         /// <returns>The <see cref="Uri"/> that returns the specified pull request.</returns>
-        public static Uri PullRequest(long repositoryId, int number)
+        public static Uri PullRequest(long repositoryId, long number)
         {
             return "repositories/{0}/pulls/{1}".FormatUri(repositoryId, number);
         }

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
@@ -163,14 +163,14 @@ namespace Octokit
         /// <param name="id">The Id of the notification to retrieve.</param>
         /// <remarks>http://developer.github.com/v3/activity/notifications/#view-a-single-thread</remarks>
         [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", MessageId = "Get")]
-        Task<Notification> Get(int id);
+        Task<Notification> Get(long id);
 
         /// <summary>
         /// Marks a single notification as read.
         /// </summary>
         /// <param name="id">The id of the notification.</param>
         /// <remarks>http://developer.github.com/v3/activity/notifications/#mark-a-thread-as-read</remarks>
-        Task MarkAsRead(int id);
+        Task MarkAsRead(long id);
 
         /// <summary>
         /// Retrives a <see cref="ThreadSubscription"/> for the provided thread id.
